@@ -1,0 +1,5 @@
+<!-- <h1 (click)="onClick()" (mouseover)="onMouseOver()">{{ title }}</h1> -->
+<h1>{{title | uppercase}}</h1>
+<input [(ngModel)]="title" />
+
+<p *ngIf="!showDate">Dzisiaj mamy: {{ today | date: 'dd.MM.YYYY' }}</p>

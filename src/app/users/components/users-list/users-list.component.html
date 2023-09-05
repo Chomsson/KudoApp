@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Imię i nazwisko</th>
+      <th>Stanowisko</th>
+      <th>Dział</th>
+      <th>Ranking</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let even = even"
+          [ngStyle]="{'background-color': even? '#00ee00' : '#33eeee'}">
+      <td>{{user.name}} {{user.surname}}</td>
+      <th>{{user.position}}</th>
+      <th>{{user.department}}</th>
+      <th>{{user.kudos}}</th>
+      <th><button type="button" class="btn btn-success">Doceń!</button></th>
+    </tr>
+  </tbody>
+</table>>

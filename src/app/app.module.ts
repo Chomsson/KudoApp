@@ -1,8 +1,15 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {SharedModule} from "./shared/shared.module";
+import {UsersModule} from "./users/users.module";
+import { registerLocaleData } from '@angular/common';
+import localePl from '@angular/common/locales/pl';
+import {KudosModule} from "./kudos/kudos.module";
+
+registerLocaleData(localePl, 'pl')
 
 @NgModule({
   declarations: [
@@ -10,9 +17,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+      UsersModule,
+      KudosModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue:'pl'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

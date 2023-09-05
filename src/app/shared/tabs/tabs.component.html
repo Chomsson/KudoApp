@@ -1,0 +1,6 @@
+<button type="button" (click)='changeView("users")' class="btn" [ngClass]="{'btn-primary': view === 'users'}"
+	>pracownicy</button>
+<button type="button"
+		(click)='changeView("kudo")'
+		class="btn"
+		[ngClass]="{'btn-primary': view === 'kudo'}">kudo</button>
