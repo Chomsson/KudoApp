@@ -1,6 +1,16 @@
-<button type="button" (click)='changeView("users")' class="btn" [ngClass]="{'btn-primary': view === 'users'}"
+<button type="button"
+		(click)='changeView("users")'
+		class="btn"
+		[ngClass]="{'btn-primary': view === 'users'}"
 	>pracownicy</button>
 <button type="button"
 		(click)='changeView("kudo")'
 		class="btn"
-		[ngClass]="{'btn-primary': view === 'kudo'}">kudo</button>
+		[ngClass]="{'btn-primary': view === 'kudo'}"
+	>kudo</button>
+
+<ng-container [ngSwitch]="view">
+	<app-users-list *ngSwitchCase=" 'users' "></app-users-list>
+	<app-kudos-list *ngSwitchCase=" 'kudos' "></app-kudos-list>
+	<div *ngSwitchDefault>coś innego</div>
+</ng-container>

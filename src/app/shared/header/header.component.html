@@ -1,5 +1,10 @@
 <!-- <h1 (click)="onClick()" (mouseover)="onMouseOver()">{{ title }}</h1> -->
-<h1>{{title | uppercase}}</h1>
-<input [(ngModel)]="title" />
+
+<div class="row">
+<h1 [routerLink]="['']">{{title | uppercase}}</h1>
+<!--<input [(ngModel)]="title" />-->
+</div>
 
 <p *ngIf="!showDate">Dzisiaj mamy: {{ today | date: 'dd.MM.YYYY' }}</p>
+
+<button class="btn btn-primary" [routerLink]=" ['/add-user'] " style="margin:5px;">Dodaj Użytkownika</button>

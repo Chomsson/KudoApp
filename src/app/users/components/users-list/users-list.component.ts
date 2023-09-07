@@ -1,5 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {User} from '../../interfaces/user';
+import {UserService} from "../../../shared/services/user.service";
 
 @Component({
   selector: 'app-users-list',
@@ -7,26 +8,19 @@ import {User} from '../../interfaces/user';
   styleUrls: ['./users-list.component.scss']
     // encapsulation: ViewEncapsulation.None
 })
-export class UsersListComponent{
+export class UsersListComponent implements OnInit{
+    public selectedRow: number |undefined;
+    public users: User[] = [];
 
-  public users : User[]= [
-    {
-       id: 0,
-       name: 'Piotr',
-       surname: 'Maksam',
-       position: 'Mistrz',
-       department: 'Świat',
-       manager: 'Ja',
-       kudos: 0 
-    },
-    {
-      id: 0,
-      name: 'Zdzisław',
-      surname: 'Kozubek',
-      position: 'Sługa',
-      department: 'żaden',
-      manager: 'Piotr Maksam',
-      kudos: 0 
-   }
-  ]
+    constructor(private userService: UserService) {
+            }
+
+    ngOnInit(): void{
+        // this.users = this.userService.users;
+        this.userService.getUsers().subscribe((users)=>{this.users = users});
+    }
+
+    public selectRow(id: number){
+        this.selectedRow = id;
+    }
 }

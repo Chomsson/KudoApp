@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "Piotr",
+      "surname": "Maksam",
+      "position": "Mistrz",
+      "department": "Świat",
+      "manager": "Ja",
+      "kudos": 0
+    },
+    {
+      "id": 1,
+      "name": "Zdzisław",
+      "surname": "Kozubek",
+      "position": "Sługa",
+      "department": "żaden",
+      "manager": "Piotr Maksam",
+      "kudos": 0
+    }
+  ]
+}

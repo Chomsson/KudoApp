@@ -8,6 +8,8 @@ import {UsersModule} from "./users/users.module";
 import { registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
 import {KudosModule} from "./kudos/kudos.module";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 registerLocaleData(localePl, 'pl')
 
@@ -19,8 +21,10 @@ registerLocaleData(localePl, 'pl')
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-      UsersModule,
-      KudosModule
+    UsersModule,
+    KudosModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [{provide: LOCALE_ID, useValue:'pl'}],
   bootstrap: [AppComponent]

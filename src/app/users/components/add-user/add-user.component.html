@@ -1,1 +1,31 @@
-<p>add-user works!</p>
+<h2>Dodaj pracownika</h2>
+
+<form #userForm = "ngForm" (ngSubmit) = "onSubmit(userForm)">
+	<div class = "row">
+		<div class="col-8 mb-2">
+			<label for="name" style="margin-right: 7px;">Imię*</label>
+			<input name="name" ngModel #name="ngModel" required="" minlength="3" [ngClass]="{'is-invalid': name.invalid}"/>
+			<span *ngIf="name.invalid && name.touched && name.dirty && name.errors?.['required']">To pole jest wymagane</span>
+			<span *ngIf="name.invalid && name.touched && name.dirty && name.errors?.['minlength']">To pole musi mieć min 3 znaki</span>
+		</div>
+		<div class="col-8 mb-2">
+			<label for="surname" style="margin-right: 7px;">Nazwisko*</label>
+			<input name="surname" ngModel #surname="ngModel" required=""/>
+			<span *ngIf="surname.invalid && surname.touched && surname.dirty">To pole jest wymagane</span>
+		</div>
+		<div class="col-8 mb-2">
+			<label for="position" style="margin-right: 7px;">Stanowisko</label>
+			<input name="position" ngModel/>
+		</div>
+		<div class="col-8 mb-2">
+			<label for="department" style="margin-right: 7px;">Dział</label>
+			<input name="department" ngModel/>
+		</div>
+		<div class="col-8 mb-2">
+			<label for="manager" style="margin-right: 7px;">Kierownik</label>
+			<input name="manager" ngModel/>
+		</div>
+	</div>
+
+	<button class="btn-primary" type="submit" [disabled]="userForm.invalid">Zapisz</button>
+</form>

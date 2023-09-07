@@ -1,11 +1,3 @@
 <app-header [title]="title"></app-header>
-<app-tabs (selectedView)="changeSelectedView()"></app-tabs>
-
-<ng-container [ngSwitch]="view">
-	<app-users-list *ngSwitchCase=" 'users' "></app-users-list>
-	<app-kudos-list *ngSwitchCase=" 'kudos' "></app-kudos-list>
-	<div *ngSwitchDefault>coś innego</div>
-</ng-container>
-
-
+<router-outlet></router-outlet>
 <app-footer></app-footer>

@@ -4,6 +4,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { FormsModule } from '@angular/forms';
+import {UsersListComponent} from "../users/components/users-list/users-list.component";
+import {UsersModule} from "../users/users.module";
+import {KudosModule} from "../kudos/kudos.module";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -20,7 +24,10 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+      UsersModule,
+      KudosModule,
+      RouterModule
   ]
 })
 export class SharedModule { }

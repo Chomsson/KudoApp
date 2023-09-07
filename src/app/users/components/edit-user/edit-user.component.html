@@ -1,0 +1,14 @@
+<ng-container *ngIf="user">
+
+	<h2>Edycja pracownika: {{user.name}} {{user.surname}}</h2>
+
+	<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+		<div class="row">
+			<div class="col-8 mb-2">
+				<label for="name">Imię</label>
+				<input name="name" formControlName ="name">
+			</div>
+		</div>
+	</form>
+
+</ng-container>
